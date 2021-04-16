@@ -69,7 +69,7 @@ use src\model\PatientDB;
                     $patientObject->setTel_pat($tel_pat);
                     $patientObject->setSexe_pat($sexe_pat);
                     $patientObject->setAge_pat($age_pat);
-                     $patientObject->setProfession($profession);
+                    $patientObject->setProfession($profession);
 
 
                   $ok = $pdb->addPatient($patientObject);

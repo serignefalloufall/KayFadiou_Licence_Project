@@ -36,19 +36,20 @@ use src\entities\Patient;
         }
 
 		public function addPatient($patient){
-
+			
 			 $sql = "INSERT INTO patient VALUES(null,
             '".$patient->getNom_pat()."', 
-            '".$patient->getPrenom_pat()."'
-			, '".$patient->getAddr_pat()."'
-			, '".$patient->getTel_pat()."'
-			, '".$patient->getSexe_pat()."'
-			, '".$patient->getAge_pat()."'
-			, '".$patient->getProfession()."'
-			
+            '".$patient->getPrenom_pat()."',
+			'".$patient->getAddr_pat()."',
+			'".$patient->getTel_pat()."',
+			'".$patient->getSexe_pat()."',
+			'".$patient->getAge_pat()."',
+			'".$patient->getProfession()."'
 			)";
+			//echo mysqli_errno($sql);
+			
 			if($this->db != null)
-			{
+			{ 
 				$this->db->exec($sql);
 				return $this->db->lastInsertId();//Si la clé primaire est auto_increment
 											 //sinon return $this->db->exec($sql);
